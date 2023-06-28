@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('src\app\components\images\img.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    background-color:rgba(252, 251, 250, 0.529);
+  }
+  p{
+
+    text-align: center;
+    display: inline-table;
+    font-size:60px;
+    margin-top: 300px;
+  }
+  .table{
+    border:2px solid black;
+}

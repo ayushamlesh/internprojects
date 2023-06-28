@@ -1,0 +1,43 @@
+<body>
+    <h1 style="text-align: center;" class="'mb-3"><u>Orders</u></h1>
+            <div class="search-box">
+                <input style="margin-left: 80px;" type="text" placeholder="Search" [(ngModel)] ="useremail">
+                <button type="submit" class="search-button" (click)=getOrderByEmail(useremail)>
+                    search
+                </button>
+            </div>
+    <div class="container">
+            <table class="table" *ngIf="showOrders && showOrders.length>0">
+                <thead>
+                    <tr>
+                        <th>OrderId</th>
+                        <th>UserEmail</th>
+                        <th></th>
+                        <th>OrderedQuantity</th>
+                        <th>OrderedPrice</th>
+                        <th>DrugName</th>
+                        <th>OrderDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of showOrders">
+                        <td>{{ cart.OrderId}}</td>
+                        <td>{{ cart.UserEmail}}</td>
+                        <td> </td>
+                        <td>{{ cart.OrderedQuantity}}</td>
+                        <td>{{ cart.OrderPrice}}</td>
+                        <td>{{ cart.DrugName}}</td>
+                        <td>{{ cart.OrderedDate | date :'dd-MM-yyyy'  }}</td>
+        
+                    </tr>
+                </tbody>
+        
+            </table>
+            <p *ngIf="!showOrders || showOrders.length <=0">No Orders</p>
+        </div>
+        
+        
+        
+        
+   
+</body>

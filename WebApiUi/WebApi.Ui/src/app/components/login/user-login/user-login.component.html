@@ -1,0 +1,30 @@
+<html>
+    <body>
+      <div class="container">
+      <div class="form-container">
+        <p class="title">Login</p>
+        <form class="form" (submit)="login()">
+          <div class="input-group">
+            <label for="useremail">UserEmail</label>
+            <input type="email" name="useremail" id="useremail" [(ngModel)]="userLoginRequest.UserEmail" placeholder="Email" required>
+            <div *ngIf="!userLoginRequest.UserEmail && isFormSubmitted" style="color:red;">Email is required!</div>
+          </div>
+          <div></div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="userLoginRequest.Password" placeholder="Password" required>
+            <div *ngIf="!userLoginRequest.Password && isFormSubmitted" style="color:red;">Password is required!</div>
+          </div>
+          <div>
+            <p>  </p>
+          </div>
+          <button class="sign" type="submit">Login</button>
+        </form>
+        <p class="signup">Don't have an account?
+          <a rel="noopener noreferrer" href="http://localhost:4200/signup" class="">Sign up</a>
+        </p>
+      </div>
+    </div>
+    </body>
+</html>
+  

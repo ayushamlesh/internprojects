@@ -1,0 +1,50 @@
+<html>
+    <body>
+      <div class="container">
+      <div class="form-container">
+        <p class="title">SignUp</p>
+        <form class="form" (submit)="signup()">
+            <div class="input-group">
+                <label for="username">UserName</label>
+                <input type="text" name="username" id="username"  placeholder="UserName" [(ngModel)]="userSignUpRequest.UserName">
+                <div *ngIf="!userSignUpRequest.UserName && isFormSubmitted" style="color:red;">UserName is required!</div>
+              </div>
+          <div class="input-group">
+            <label for="useremail">UserEmail</label>
+            <input type="email" name="useremail" id="useremail"  placeholder="Email" [(ngModel)]="userSignUpRequest.UserEmail">
+            <div *ngIf="!userSignUpRequest.UserEmail && isFormSubmitted" style="color:red;">UserEmail is required!</div>
+          </div>
+          <div></div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"  placeholder="Password" [(ngModel)]="userSignUpRequest.Password"  pattern="^[a-zA-Z0-9@#$%^&+=]+$">
+            <div *ngIf="!userSignUpRequest.Password && isFormSubmitted" style="color:red;">Password is required!</div>
+            <div *ngIf="userSignUpRequest.Password && !isValidPasswordPattern(userSignUpRequest.Password) && isFormSubmitted" style="color:red;">Invalid password format!</div>
+
+          </div>
+          <div>
+            <p>  </p>
+          </div>
+          <button class="sign" type="submit">Register</button>
+        </form>
+        <br>
+        <p class="signup">Already have an account?
+          <a rel="noopener noreferrer" href="http://localhost:4200/home/users/login" class="">Login</a>
+        </p>
+      </div>
+    <div>
+      <br>
+      <br>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>  
+    </div>
+
+    </body>
+</html>
+  

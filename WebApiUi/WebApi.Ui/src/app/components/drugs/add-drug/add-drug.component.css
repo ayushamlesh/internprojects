@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('src\app\components\images\img5.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+  }
+  .btn
+  {
+     background-color: cadetblue;
+  }

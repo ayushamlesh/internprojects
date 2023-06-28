@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('src\app\components\images\img3.avif');
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    background-color:rgba(252, 251, 250, 0.529);
+  }

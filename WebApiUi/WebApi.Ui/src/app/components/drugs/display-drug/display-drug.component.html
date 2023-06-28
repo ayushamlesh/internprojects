@@ -1,0 +1,39 @@
+<body>
+    <h1 style="text-align: center;" class="'mb-3"> <u>Medicines </u></h1>
+    <div class="search-box">
+        <input style="margin-left: 80px;" type="text" class="input" id="drugname" name="drugname" placeholder="Search" [(ngModel)] ="drugname">
+        <button type="submit" class="search-button" (click)=getDrugByDrugName(drugname)>
+            Search
+        </button>
+    </div>
+    <div class="container">
+        <div class="container my-5">
+            <table class="table" *ngIf="drugsDisplay && drugsDisplay.length>0">
+                <thead>
+                    <tr>
+                        <th style="font-size: 20px;font-weight: bolder;" >Id</th>
+                        <th style="font-size: 20px;font-weight: bolder;" >Name</th>
+                        <th style="font-size: 20px;font-weight: bolder;" >Price</th>
+                        <th style="font-size: 20px;font-weight: bolder;" >QuantityAvailable</th>
+                        <th style="font-size: 20px;font-weight: bolder;" >OrderQuantity</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row" *ngFor="let drug of drugsDisplay;let i=index">
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugId}}</td>
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugName}}</td>
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugPrice}}</td>
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugQuantityAvailable}}</td>
+                        <td style="font-size: medium;font-weight: bold;"><input type="number" id="reqQuantity" name="reqQuantity" min="1" [(ngModel)] ="reqQuantity[i]"></td>
+                        <td style="font-size: medium;font-weight: bold;"><button class="btn btn-info" (click)="postCart(drug.DrugId,reqQuantity[i])">Add To Cart<i class=""></i></button></td>
+                    </tr>
+                </tbody>
+        
+            </table>
+            <p *ngIf="!drugsDisplay || drugsDisplay.length <=0">Drugs NotFound</p>
+        </div>
+        
+        
+    </div>
+</body>

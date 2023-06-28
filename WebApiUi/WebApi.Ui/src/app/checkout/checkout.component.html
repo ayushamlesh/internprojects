@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="checkout.component.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  
+</head>
+
+<body>
+  <div class="container">
+    <h1 class ="checkout-title">Checkout</h1>
+    <img src="/src/app/components/images/truck-delivery.gif" alt="Hover GIF" class="hover-gif">
+    <div class="image-container">
+        <img src="/src/app/components/images/med1-image.jpeg" alt="Checkout Image" class = "background-image">
+      </div>
+
+
+    <form id="myForm" action="http://127.0.0.1:5500/src/app/confirmation/confirmation.component.html" method="GET">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder = "Enter your Name" required>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder = "Enter your Email" required>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder = "Enter your Address" required></textarea>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="payment">Payment Method:</label>
+        <select id="payment" name="payment">
+            <option value="cash_on_delivery">Cash On Delivery(COD)</option> 
+          <option value="credit_card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="paytm">Paytm</option>
+        </select>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          I agree to the terms and conditions
+        </label>
+      </div>
+      <br>
+     
+      <!-- <a href="/src/app/confirmation/confirmation.component.html" class="btn">Place Order</a>
+      <button type="submit" id="submitButton"></button><br>  -->
+      <button type="submit" id="submitButton">Place Order
+       
+      </button>
+      
+      <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+          // Prevent the form from submitting
+          event.preventDefault();
+      
+          // Check if the form is valid before submitting
+          if (isFormValid()) {
+            // If the form is valid, submit it
+            document.getElementById('myForm').submit();
+          } else {
+            // If the form is not valid, display an error message or take appropriate action
+            alert('Please fill out all the required fields before submitting.');
+          }
+        });
+      
+        function isFormValid() {
+          // Perform your form validation here
+          // You can check if the required fields have been filled out
+      
+          // Example validation: Check if the input fields are empty
+          var inputs = document.getElementById('myForm').getElementsByTagName('input');
+          for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value === '') {
+              return false; // Form is not valid
+            }
+          }
+      
+          return true; // Form is valid
+        }
+      </script>
+      
+    </form>
+  </div>
+</body>
+
+
+</html>

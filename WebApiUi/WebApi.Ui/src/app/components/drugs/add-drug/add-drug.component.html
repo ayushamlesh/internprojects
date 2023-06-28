@@ -1,0 +1,28 @@
+<body>
+  <h1 style="text-align: center;" class="mb-3"> <u>Add New Drug</u></h1>
+  <div class="container">
+              <form #form="ngForm" (ngSubmit)="addDrug()">
+                  <div class="mb-3">
+                    <label for="drugname" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="drugname" name="drugname" [(ngModel)] ="addDrugRequest.DrugName" required>
+                    <div *ngIf="!addDrugRequest.DrugName && isFormSubmitted" style="color:red;">DrugName is required!</div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="drugprice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="drugprice" name="drugprice" [(ngModel)] ="addDrugRequest.DrugPrice" required>
+                    <div *ngIf="!addDrugRequest.DrugPrice && isFormSubmitted" style="color:red;">DrugPrice is required!</div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="drugquantityavailable" class="form-label">Quantity</label>
+                      <input type="number" class="form-control" id="drugquantityavailable" name="drugquantityavailable" [(ngModel)] ="addDrugRequest.DrugQuantityAvailable" required>
+                      <div *ngIf="!addDrugRequest.DrugQuantityAvailable && isFormSubmitted" style="color:red;">Quantity is required!</div>
+                  </div>
+                 
+                    
+                  <button type="submit" class="btn">Add Drug</button>
+              </form>
+          </div>
+   
+  
+</body>

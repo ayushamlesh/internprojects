@@ -1,0 +1,30 @@
+<body>
+    <h1 style="text-align: center;" class="mb-3">Edit Drug</h1>
+    <div class="container">
+        
+                    <form #form="ngForm" (ngSubmit)="updateDrug()">
+                        <div class="mb-3">
+                            <label for="drugid" class="form-label">DrugId</label>
+                            <input type="number" class="form-control" id="drugname" readonly name="drugid" [(ngModel)] ="drugDetails.DrugId" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="drugname" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="drugname" name="drugname" [(ngModel)] ="drugDetails.DrugName" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label for="drugprice" class="form-label">Price</label>
+                          <input type="number" class="form-control" id="drugprice" name="drugprice" [(ngModel)] ="drugDetails.DrugPrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="drugquantityavailable" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="drugquantityavailable" name="drugquantityavailable" [(ngModel)] ="drugDetails.DrugQuantityAvailable" required>
+                        </div>
+                       
+                          
+                        <button type="submit" class="btn btn-primary" style="margin-right: 20px;">Update</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteDrug(drugDetails.DrugId)">Delete</button>
+                    </form>
+                </div>
+       
+</body>

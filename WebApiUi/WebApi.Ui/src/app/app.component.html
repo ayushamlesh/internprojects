@@ -1,0 +1,44 @@
+<html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container">
+    <h1 class="navbar-brand"><i class="fa-regular fa-hospital"></i> WeCareForAll</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div *ngIf="isUserLoggedIn(); else AdminCheck" class="user-nav navbar-right">
+        <a style="margin-right: 10px;color: white;" aria-current="page" routerLink="displaydrug" routerLinkActive="active-link">Drugs</a>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <a style="margin-right: 10px;color: white;" aria-current="page" routerLink="displaydrug/cart" routerLinkActive="active-link">MyCart</a>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <a style="margin-right: 10px;color: white;" aria-current="page" routerLink="displaydrug/cart/orders" routerLinkActive="active-link">My Orders</a>
+        <span style="margin-left:620px;margin-right: 10px;color: white;">{{ getUsername() }}</span>
+        <a (click)="logout()" style="margin-right: 10px;color: white;">Logout
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+        <!-- Additional buttons for authenticated user -->
+      </div>
+      <ng-template #AdminCheck>
+        <div *ngIf="isAdminLoggedIn(); else loggedOutContent" class="user-nav navbar-right">
+         <a style="margin-right: 10px;color: white;" routerLink="drugs/add" routerLinkActive="active-link">AddDrug</a>
+          <a style="margin-right: 10px;color:white" routerLink="drugs" routerLinkActive="active-link">Drugs</a>
+          <a style="margin-right: 10px;color:white" routerLink="drugs/orders" routerLinkActive="active-link">showOrders</a>
+          <span style="margin-left:700px;margin-right: 10px;color: white;">{{ getUsername() }}</span>
+          <a (click)="logout()" style="margin-right: 10px;color: white;">Logout
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+          <!-- Additional buttons for authenticated user -->
+        </div>
+      </ng-template>
+      <ng-template #loggedOutContent>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link active" style="margin-left:792px;margin-right: 10px;" aria-current="page" routerLink="home/users/login" routerLinkActive="active-link">
+            <i class="fa-solid fa-right-to-bracket"></i>  Login</a>
+          <a class="nav-link active" style="margin-right: 10px;" aria-current="page" routerLink="signup" routerLinkActive="active-link">Sign Up</a>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+</html>

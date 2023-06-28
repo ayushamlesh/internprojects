@@ -1,0 +1,41 @@
+<body>
+    <h1 style="text-align: center;" class="'mb-3"> <U>Drugs List </U></h1>
+   
+    <div class="search-box" style="margin-bottom: 10px;">
+        <input style="margin-left: 80px;" type="text" placeholder="Search" [(ngModel)]="name">
+        <button type="submit" class="search-button"  (click)=getDrugByName(name)>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            search
+        </button>
+    </div>
+        <div class="container my-5">
+            <table class="table" *ngIf="drugs && drugs.length>0">
+                <thead>
+                    <tr>
+                        <th>DrugId</th>
+                        <th>DrugName</th>
+                        <th>DrugPrice</th>
+                        <th>DrugQuantityAvailable</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let drug of drugs" style="line-height:5px;">
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugId}}</td>
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugName}}</td>
+                       
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugPrice}}</td>
+                        <td style="font-size: medium;font-weight: bold;">{{ drug.DrugQuantityAvailable}}</td>
+                        <td><button class="btn btn-success" [routerLink]="['/drugs','edit',drug.DrugId]">Edit</button>
+                        </td>
+                        <!-- <td><button class="btn btn-danger" [routerLink]="['/drugs','edit',drug.DrugId]">Delete</button></td> -->
+                        <!-- <td hide><button type="button" class="btn btn-danger" (click)="deleteDrug(drugDetails.DrugId)">Delete</button></td> -->
+
+                    </tr>
+                </tbody>
+
+            </table>
+            <p *ngIf="!drugs || drugs.length <=0">Drugs NotFound</p>
+        </div>
+
+</body>

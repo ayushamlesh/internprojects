@@ -1,0 +1,40 @@
+<body>
+    <h1 style="text-align: center;"> <u>Items </u></h1>
+    <div class="container">
+        <div class="container my-5">
+            <table class="table" *ngIf="showCart && showCart.length>0">
+                <thead>
+                    <tr>
+                        <th>CartId</th>
+                        <th>DrugId</th>
+                        <th>UserEmail</th>
+                        <th>QuantityOrdered</th>
+                        <th>Amount</th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of showCart">
+                        <td>{{ cart.CartID}}</td>
+                        <td>{{ cart.DrugID}}</td>
+                        <td>{{ cart.UserEmail}}</td>
+                        <td>{{ cart.Quantity}}</td>
+                        <td>{{ cart.Amount}}</td>
+                        <td><button class="btn btn-info" (click)="addOrder(cart.CartID)">Order</button></td>
+                        <td><button class="btn btn-danger" (click)="deleteCart(cart.CartID)">Delete</button></td>
+        
+                    </tr>
+                </tbody>
+        
+            </table>
+            <p *ngIf="!showCart || showCart.length <=0">
+                Your Cart is Empty
+            
+            
+            </p>
+        </div>
+        
+        
+    </div>
+</body>

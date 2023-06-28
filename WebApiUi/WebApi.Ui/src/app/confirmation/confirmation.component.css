@@ -1,0 +1,66 @@
+.background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    animation: slow-gif 20s infinite linear;
+  }
+  @keyframes move-gif {
+    10% {
+      background-position: 10% 10%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #85acd8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .logo-gif-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .logo-gif-container img {
+    width: 100px; /* Adjust the width as per your logo GIF size */
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #f5fafd;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0da6c1;
+  }
